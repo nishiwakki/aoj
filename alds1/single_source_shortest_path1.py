@@ -27,13 +27,12 @@ for _ in range(INF):
     if u == None:
         break
     T.append(u)
-    for i in range(n):
-        while adj[u]:
-            v, weight = adj[u].pop()
-            if v in T:
-                continue
-            if dist[v] > dist[u] + weight:
-                dist[v] = dist[u] + weight
+    while adj[u]:
+        v, weight = adj[u].pop()
+        if v in T:
+            continue
+        if dist[v] > dist[u] + weight:
+            dist[v] = dist[u] + weight
 # 出力
 for v, dv in enumerate(dist):
     print(v, dv)
